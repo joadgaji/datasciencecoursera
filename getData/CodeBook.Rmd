@@ -1,0 +1,26 @@
+---
+title: "CodeBook"
+author: "Adrian Garcia"
+date: "Friday, May 15, 2015"
+output: html_document
+---
+
+This Code book that describes the variables, the data, and any transformations or work that you performed to clean up the data
+
+* Download the data from the original resources
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+* The file run_analysis.R do the following steps:
+1. Read the main data, the activities and the subjects of the train folder. The files X_train.txt is into xtrain, y_train.txt is into ytrain and subject_train is into subtrain variable respectively.
+2. Read the main data, the activities and the subjects of the test folder. The files X_test.txt is into xtest, y_test.txt is into ytest and subject_test is into subtest variable respectively.
+3. Then join the information of the main data, the activities and the subjects into tree data frames. The order is very important. The name of the variables are data, dataAct and dataSub. Each data frame has 10299 rows
+4. Read the name of the features from the features.txt
+5. Search only the column where mean() and std() appears. The result is only 66 columns
+6. Filter the data (main data) and extract only the 66 columns that we care about.
+7. Read the activities labels from activity_labels.txt
+8. Make a query to give the name of the activity instead of its id
+9. Rename the names of the columns of the data, the activity and the subject data
+10. Create a new data frame with all the information
+11. Write the information into merged_data.txt file
+12. With the information that we have. Create a agrupation by subject and activity as variables and the other columns will be applied the mean function.
+13. The result will be written into data_with_means.txt file.

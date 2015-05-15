@@ -1,0 +1,7 @@
+
+Steps to run the project
+1. Donwload and unzip the file from this link: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+2. Rename de folder with "dataproject"
+3. Paste the file run_analysis.R in the same level of dataproject folder
+4. Open run_analysis.R with R Studio
+5. The script will generate two files merged_data.txt with the information and data_with_means.txt with the mean of the variables by subject and activity. 
