@@ -51,7 +51,7 @@ tidyData <- data.frame(dataSub, dataAct, dataMeanStd)
 names(tidyData)[2] <- "activity"
 
 ##Write data
-write.table(tidyData, "merged_data.txt") 
+write.table(tidyData, "mergedData.txt", row.name=FALSE) 
 object.size(tidyData)
 
 
