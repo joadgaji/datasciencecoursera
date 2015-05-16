@@ -59,5 +59,5 @@ object.size(tidyData)
 dataGroup <- aggregate(tidyData[3:68], by=list(tidyData$subject, tidyData$activity), FUN=mean)
 names(dataGroup)[1] <- "subject"
 names(dataGroup)[2] <- "activity"
-write.table(dataGroup, "data_with_means.txt")
+write.table(dataGroup, "dataMeans.txt", row.name=FALSE)
 
