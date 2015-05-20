@@ -11,14 +11,14 @@ corr <- function(directory, threshold = 0) {
   ## NOTE: Do not round the result!
   files <- list.files(directory,  full.names=TRUE)
   comp <- complete(directory)
-  data <- c()
+  data <- numeric(0)
   for(i in files){
     info <- read.csv(i)
     if(comp[info[1,4],2] > threshold){
       ##print(info[1,4])
       infoComp <- complete.cases(info)
       infoComp <- info[infoComp,]
-      corTemp <- cor(infoComp[,2], infoComp[,3])
+      corTemp <- cor(infoComp[,2], infoComp[,3], use = "pairwise.complete.obs")
       data <- c(data, corTemp)
       ##print(corTemp)
     }

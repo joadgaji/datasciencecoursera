@@ -18,11 +18,11 @@ complete <- function(directory, id = 1:332) {
     info <- read.csv(i)
     for(j in id){
       if(info[1,4] == j){
-        com <- complete.cases(info)
+        com <- complete.cases(info[,c(2,3)])
         nobs[nobs == j] <- nrow(info[com,])
       }
     }
   }
   data.frame(id,nobs)
-  
+
 }
